@@ -46,4 +46,12 @@ class LinkedListTest < Minitest::Test
     assert_equal 'The Henderson family, followed by the West family, followed by the Rhodes family', @linked_list.to_string
     assert_equal 3, @linked_list.count
   end
+
+  def test_insert
+    @linked_list.append('West')
+    @linked_list.append('Rhodes')
+    @linked_list.insert(1, 'Henderson')
+    assert_equal 'The West family, followed by the Henderson family, followed by the Rhodes family', @linked_list.to_string
+    assert_equal 3, @linked_list.count
+  end
 end
